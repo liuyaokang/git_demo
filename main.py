@@ -1,3 +1,3 @@
 import requests
-url=""
+url="www.baidu.com"
 rsp = requests.get(url)
