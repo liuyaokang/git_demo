@@ -1,3 +1,9 @@
+import re
+import json
+from urllib.parse import urlparse,parse_qs
+from save_topic import extract_topic
+import requests
+
 def parase_list(url):
     next_page = 1
     tabid = 0
