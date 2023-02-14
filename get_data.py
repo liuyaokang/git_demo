@@ -1,7 +1,6 @@
 import re
 import json
-from urllib.parse import urlparse,parse_qs
-from save_topic import extract_topic
+from saveto_db.save_topic import extract_topic
 import requests
 from get_urls import get_last_urls
 
