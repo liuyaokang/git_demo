@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 import execjs
 import requests
 
+'''反爬并返回状态码和反爬json'''
 class Signer():
     def __init__(self):
         self.nonce_func = execjs.compile("""
@@ -62,8 +63,8 @@ class Signer():
         rsp = requests.get(url, headers=headers)
         return rsp.status_code, rsp.json()
 
-if __name__ == '__main__':
-    singer=Signer()
-    code,data=singer.get_html("https://bizapi.csdn.net/community-cloud/v1/homepage/community/by/tag?deviceType=PC&tagId=2")
-    print(code)
-    print(data)
+# if __name__ == '__main__':
+#     singer=Signer()
+#     code,data=singer.get_html("https://bizapi.csdn.net/community-cloud/v1/homepage/community/by/tag?deviceType=PC&tagId=2")
+#     print(code)
+#     print(data)
