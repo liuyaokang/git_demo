@@ -15,6 +15,9 @@ def get_last_urls():
     '''获取社区一级目录下的html'''
     sel = Selector(text=rsp.text)
     c_nodes = sel.css("div.custom-tree-node")
+
+    '''css选择器去识别定位到url相关的的节点'''
+
     for index,c_node in enumerate(c_nodes):
         url = "https://bizapi.csdn.net/community-cloud/v1/homepage/community/by/tag?deviceType=PC&tagId={}".format(index+1)
         '''一级目录的url'''
@@ -29,3 +32,6 @@ def get_last_urls():
                 urls.append(url)
         break
     return urls
+
+if __name__ == "__main__":
+    urls=get_last_urls()
